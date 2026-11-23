@@ -9,7 +9,7 @@ open PEqualNP.MetaComplexity
 -- Reuses project proofs at 3ec921591ffc6536fad46069ec0c219464fb6ffc.
 
 -- Adapted from PEqualNP.MetaComplexity.Helpers.Shannon in the Apache-2.0 project.
-namespace PEqualNP.Outside.L_meta_314_aux
+namespace PEqualNP.Outside.L_meta_314
 
 open PEqualNP.CircuitLowerBounds
 
@@ -123,10 +123,10 @@ theorem shannon (k : ℕ) : ∀ (f : (Fin k → Bool) → Bool) (m : ℕ), k ≤
       rw [show M = w2.length from l2.symm, final_gates w2 k o0 o1 hk2 h02 h12, ek, e0, e1]
       cases w.getD k false <;> simp
 
-end PEqualNP.Outside.L_meta_314_aux
+end PEqualNP.Outside.L_meta_314
 
 -- Adapted from PEqualNP.MetaComplexity.Helpers.Support in the Apache-2.0 project.
-namespace PEqualNP.Outside.L_meta_314_aux
+namespace PEqualNP.Outside.L_meta_314
 
 open PEqualNP.CircuitLowerBounds
 
@@ -287,10 +287,10 @@ theorem dep_lower (n : ℕ) (f : (Fin n → Bool) → Bool)
   rw [← hS, hcard] at hc
   omega
 
-end PEqualNP.Outside.L_meta_314_aux
+end PEqualNP.Outside.L_meta_314
 
 -- Adapted from PEqualNP.MetaComplexity.Helpers.Elim in the Apache-2.0 project.
-namespace PEqualNP.Outside.L_meta_314_aux
+namespace PEqualNP.Outside.L_meta_314
 
 open PEqualNP.CircuitLowerBounds
 
@@ -720,10 +720,10 @@ theorem gate_elim (n : ℕ) (f : (Fin (n + 1) → Bool) → Bool) (b : Bool) (s 
     rw [hst] at this
     exact this
 
-end PEqualNP.Outside.L_meta_314_aux
+end PEqualNP.Outside.L_meta_314
 
 -- Adapted from PEqualNP.MetaComplexity.Helpers.Parity in the Apache-2.0 project.
-namespace PEqualNP.Outside.L_meta_314_aux
+namespace PEqualNP.Outside.L_meta_314
 
 open PEqualNP.CircuitLowerBounds
 
@@ -1078,10 +1078,10 @@ theorem parity_lower : ∀ (n s : ℕ),
     have := par_lower n false s h'
     omega
 
-end PEqualNP.Outside.L_meta_314_aux
+end PEqualNP.Outside.L_meta_314
 
 -- Adapted from PEqualNP.MetaComplexity.Helpers.Parity3 in the Apache-2.0 project.
-namespace PEqualNP.Outside.L_meta_314_aux
+namespace PEqualNP.Outside.L_meta_314
 
 open PEqualNP.CircuitLowerBounds
 
@@ -1833,10 +1833,10 @@ theorem parity_lower3 : ∀ (n s : ℕ),
     have := par_lower3 n false s (clean_of (n + 1) _ s hnc h')
     omega
 
-end PEqualNP.Outside.L_meta_314_aux
+end PEqualNP.Outside.L_meta_314
 
 -- Adapted from PEqualNP.MetaComplexity.Helpers.Parity4 in the Apache-2.0 project.
-namespace PEqualNP.Outside.L_meta_314_aux
+namespace PEqualNP.Outside.L_meta_314
 
 open PEqualNP.CircuitLowerBounds
 
@@ -3010,10 +3010,10 @@ theorem parity_lower4 : ∀ (n s : ℕ),
     have := par_lower4 n false s (clean_of (n + 1) _ s hnc h')
     omega
 
-end PEqualNP.Outside.L_meta_314_aux
+end PEqualNP.Outside.L_meta_314
 
 -- Adapted from PEqualNP.MetaComplexity.Helpers.PermInputs in the Apache-2.0 project.
-namespace PEqualNP.Outside.L_meta_314_aux.PermInputs
+namespace PEqualNP.Outside.L_meta_314.PermInputs
 
 open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity
 
@@ -3274,13 +3274,13 @@ theorem fix_many {N : ℕ} (T : Finset (Fin N)) (hT : T.Nonempty) :
         rw [e1, e2]
         exact hx
 
-end PEqualNP.Outside.L_meta_314_aux.PermInputs
+end PEqualNP.Outside.L_meta_314.PermInputs
 
 -- Adapted from PEqualNP.MetaComplexity.Helpers.ForestElim in the Apache-2.0 project.
-namespace PEqualNP.Outside.L_meta_314_aux.Forest
+namespace PEqualNP.Outside.L_meta_314.Forest
 
 open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity
-open PEqualNP.Outside.L_meta_314_aux.PermInputs
+open PEqualNP.Outside.L_meta_314.PermInputs
 
  
 theorem one_gate_at (n : ℕ) (f : (Fin (n + 1) → Bool) → Bool) (p : Fin (n + 1)) (b : Bool)
@@ -3314,7 +3314,7 @@ theorem one_gate_at (n : ℕ) (f : (Fin (n + 1) → Bool) → Bool) (p : Fin (n 
     simp only
     rw [snoc_swap, snoc_swap]
     exact hxy
-  have h' := PEqualNP.Outside.L_meta_314_aux.gate_elim n _ b s hdep' hnc' hg
+  have h' := PEqualNP.Outside.L_meta_314.gate_elim n _ b s hdep' hnc' hg
   have h'' := relabel_size (fun j : Fin n => σ j.castSucc) _ s h'
   have e : (fun x : Fin (n + 1) → Bool =>
       (fun y : Fin n → Bool => (fun x => f (x ∘ σ)) (Fin.snoc y b))
@@ -3326,13 +3326,13 @@ theorem one_gate_at (n : ℕ) (f : (Fin (n + 1) → Bool) → Bool) (p : Fin (n 
   rw [e] at h''
   exact h''
 
-end PEqualNP.Outside.L_meta_314_aux.Forest
+end PEqualNP.Outside.L_meta_314.Forest
 
 -- Adapted from PEqualNP.MetaComplexity.Helpers.Readers in the Apache-2.0 project.
-namespace PEqualNP.Outside.L_meta_314_aux.Readers
+namespace PEqualNP.Outside.L_meta_314.Readers
 
-open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.Outside.L_meta_314_aux
-open PEqualNP.Outside.L_meta_314_aux.PermInputs
+open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.Outside.L_meta_314
+open PEqualNP.Outside.L_meta_314.PermInputs
 
  
 
@@ -3630,7 +3630,7 @@ variable {n : ℕ} {f : (Fin (n + 1) → Bool) → Bool} {gs : List Gate} {o : �
 theorem Least.save (L : Least (n + 1) f gs o) (i : Fin (n + 1)) (b : Bool)
     (hnc : ∃ x y : Fin (n + 1) → Bool, f (Function.update x i b) ≠ f (Function.update y i b))
     (S : Finset ℕ) (hS : ∀ p ∈ S, RC n gs i b p) : Drop f i b S.card gs.length :=
-  PEqualNP.Outside.L_meta_314_aux.Readers.save n f gs o L.hcl L.hev i b hnc S hS
+  PEqualNP.Outside.L_meta_314.Readers.save n f gs o L.hcl L.hev i b hnc S hS
 
 theorem Least.save2 (L : Least (n + 1) f gs o) (i : Fin (n + 1)) (b : Bool)
     (hnc : ∃ x y : Fin (n + 1) → Bool, f (Function.update x i b) ≠ f (Function.update y i b))
@@ -3732,12 +3732,12 @@ theorem Least.next (L : Least (n + 1) f gs o) (i : Fin (n + 1)) (b : Bool)
 
 end
 
-end PEqualNP.Outside.L_meta_314_aux.Readers
+end PEqualNP.Outside.L_meta_314.Readers
 
 -- Adapted from PEqualNP.MetaComplexity.Helpers.ReadersPat in the Apache-2.0 project.
-namespace PEqualNP.Outside.L_meta_314_aux.Readers
+namespace PEqualNP.Outside.L_meta_314.Readers
 
-open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.Outside.L_meta_314_aux
+open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.Outside.L_meta_314
 
  
 theorem gate_cases {k : ℕ} (gs : List Gate) (hcl : CleanL k gs) (q : ℕ) (g : Gate)
@@ -3935,12 +3935,12 @@ theorem Least.not_two_readers (L : Least (n + 1) f gs o) (i : Fin (n + 1))
 
 end
 
-end PEqualNP.Outside.L_meta_314_aux.Readers
+end PEqualNP.Outside.L_meta_314.Readers
 
 -- Adapted from PEqualNP.MetaComplexity.Helpers.ReadersFunnel in the Apache-2.0 project.
-namespace PEqualNP.Outside.L_meta_314_aux.Readers
+namespace PEqualNP.Outside.L_meta_314.Readers
 
-open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.Outside.L_meta_314_aux
+open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.Outside.L_meta_314
 
  
 theorem lit_contra {m : ℕ} {f : (Fin m → Bool) → Bool} (hnc : RestrNC f) (v : Fin m) (c : Bool)
@@ -4152,12 +4152,12 @@ theorem Least.funnel (L : Least (n + 1) f gs o) (hdep : ∃ p, Dep f p) (hnc : R
 
 end
 
-end PEqualNP.Outside.L_meta_314_aux.Readers
+end PEqualNP.Outside.L_meta_314.Readers
 
 -- Adapted from PEqualNP.MetaComplexity.Helpers.ReadersExport in the Apache-2.0 project.
-namespace PEqualNP.Outside.L_meta_314_aux.Readers
+namespace PEqualNP.Outside.L_meta_314.Readers
 
-open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.Outside.L_meta_314_aux
+open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.Outside.L_meta_314
 
  
 
@@ -4224,17 +4224,21 @@ theorem noFunnel_of_sep {m : ℕ} (f : (Fin m → Bool) → Bool)
   · exact h2 ((hab x2).1.trans (hab x2).2).symm
   · exact h1 (hab x1).2
 
-end PEqualNP.Outside.L_meta_314_aux.Readers
+end PEqualNP.Outside.L_meta_314.Readers
 
 -- Adapted from PEqualNP.MetaComplexity.L107 in the Apache-2.0 project.
-theorem PEqualNP.Outside.L_meta_314_aux.readerTheorem : ∀ (n : ℕ) (f : (Fin (n + 1) → Bool) → Bool) (s : ℕ), (∃ p : Fin (n + 1), ∃ x : Fin (n + 1) → Bool, f (Function.update x p (!x p)) ≠ f x) → (∀ p : Fin (n + 1), (∃ x : Fin (n + 1) → Bool, f (Function.update x p (!x p)) ≠ f x) → ∀ b : Bool, ∃ x y : Fin (n + 1) → Bool, f (Function.update x p b) ≠ f (Function.update y p b)) → (∀ p q : Fin (n + 1), p ≠ q → (∃ x : Fin (n + 1) → Bool, f (Function.update x p (!x p)) ≠ f x) → (∃ x : Fin (n + 1) → Bool, f (Function.update x q (!x q)) ≠ f x) → ¬ ∃ a b : Bool, ∀ x : Fin (n + 1) → Bool, f (Function.update (Function.update x p (!a)) q b) = f (Function.update (Function.update x p a) q (!b)) ∧ f (Function.update (Function.update x p a) q (!b)) = f (Function.update (Function.update x p (!a)) q (!b))) → PEqualNP.MetaComplexity.HasCircuitSize (n + 1) f s → (∃ (y : Fin (n + 1)) (s' : ℕ), s' + 3 ≤ s ∧ PEqualNP.MetaComplexity.HasCircuitSize (n + 1) (fun x => f (Function.update x y false)) s') ∨ (∃ (y : Fin (n + 1)) (s' : ℕ), s' + 4 ≤ s ∧ PEqualNP.MetaComplexity.HasCircuitSize (n + 1) (fun x => f (Function.update x y true)) s') :=
-  PEqualNP.Outside.L_meta_314_aux.Readers.fanout_step_3_4
+namespace PEqualNP.Outside.L_meta_314
+
+theorem readerTheorem : ∀ (n : ℕ) (f : (Fin (n + 1) → Bool) → Bool) (s : ℕ), (∃ p : Fin (n + 1), ∃ x : Fin (n + 1) → Bool, f (Function.update x p (!x p)) ≠ f x) → (∀ p : Fin (n + 1), (∃ x : Fin (n + 1) → Bool, f (Function.update x p (!x p)) ≠ f x) → ∀ b : Bool, ∃ x y : Fin (n + 1) → Bool, f (Function.update x p b) ≠ f (Function.update y p b)) → (∀ p q : Fin (n + 1), p ≠ q → (∃ x : Fin (n + 1) → Bool, f (Function.update x p (!x p)) ≠ f x) → (∃ x : Fin (n + 1) → Bool, f (Function.update x q (!x q)) ≠ f x) → ¬ ∃ a b : Bool, ∀ x : Fin (n + 1) → Bool, f (Function.update (Function.update x p (!a)) q b) = f (Function.update (Function.update x p a) q (!b)) ∧ f (Function.update (Function.update x p a) q (!b)) = f (Function.update (Function.update x p (!a)) q (!b))) → PEqualNP.MetaComplexity.HasCircuitSize (n + 1) f s → (∃ (y : Fin (n + 1)) (s' : ℕ), s' + 3 ≤ s ∧ PEqualNP.MetaComplexity.HasCircuitSize (n + 1) (fun x => f (Function.update x y false)) s') ∨ (∃ (y : Fin (n + 1)) (s' : ℕ), s' + 4 ≤ s ∧ PEqualNP.MetaComplexity.HasCircuitSize (n + 1) (fun x => f (Function.update x y true)) s') :=
+  PEqualNP.Outside.L_meta_314.Readers.fanout_step_3_4
+
+end PEqualNP.Outside.L_meta_314
 
 -- Adapted from PEqualNP.MetaComplexity.Helpers.PathSizeLower in the Apache-2.0 project.
-namespace PEqualNP.Outside.L_meta_314_aux.PathSize
+namespace PEqualNP.Outside.L_meta_314.PathSize
 
-open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.Outside.L_meta_314_aux
-open PEqualNP.Outside.L_meta_314_aux.PermInputs
+open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.Outside.L_meta_314
+open PEqualNP.Outside.L_meta_314.PermInputs
 
  
 def G (N k : ℕ) (x : Fin N → Bool) : Bool :=
@@ -4479,13 +4483,13 @@ theorem path_lower (n s : ℕ) (h : HasCircuitSize n (path n) s) : n + n / 2 ≤
   · rw [path_eq_G] at h
     exact G_lower n (by omega) 0 n s (by omega) h
 
-end PEqualNP.Outside.L_meta_314_aux.PathSize
+end PEqualNP.Outside.L_meta_314.PathSize
 
 -- Adapted from PEqualNP.MetaComplexity.Helpers.CyclePathGates in the Apache-2.0 project.
-namespace PEqualNP.Outside.L_meta_314_aux.CycleSize.PG
+namespace PEqualNP.Outside.L_meta_314.CycleSize.PG
 
-open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.Outside.L_meta_314_aux
-open PEqualNP.Outside.L_meta_314_aux.PermInputs PEqualNP.Outside.L_meta_314_aux.PathSize
+open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.Outside.L_meta_314
+open PEqualNP.Outside.L_meta_314.PermInputs PEqualNP.Outside.L_meta_314.PathSize
 
  
 def pathB (w : List Bool) : ℕ → Bool
@@ -4593,14 +4597,14 @@ theorem getD_ofFn_ext {n : ℕ} (x : Fin n → Bool) (i : ℕ) :
   · rw [dif_pos hi]; simp [hi]
   · rw [dif_neg hi, List.getD_eq_default _ _ (by simp; omega)]
 
-end PEqualNP.Outside.L_meta_314_aux.CycleSize.PG
+end PEqualNP.Outside.L_meta_314.CycleSize.PG
 
 -- Adapted from PEqualNP.MetaComplexity.Helpers.CycleUpper in the Apache-2.0 project.
-namespace PEqualNP.Outside.L_meta_314_aux.CycleSize
+namespace PEqualNP.Outside.L_meta_314.CycleSize
 
-open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.Outside.L_meta_314_aux
-open PEqualNP.Outside.L_meta_314_aux.PermInputs PEqualNP.Outside.L_meta_314_aux.PathSize
-open PEqualNP.Outside.L_meta_314_aux.CycleSize.PG
+open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.Outside.L_meta_314
+open PEqualNP.Outside.L_meta_314.PermInputs PEqualNP.Outside.L_meta_314.PathSize
+open PEqualNP.Outside.L_meta_314.CycleSize.PG
 
  
 def cyc (n : ℕ) : (Fin n → Bool) → Bool :=
@@ -4905,13 +4909,13 @@ theorem cyc_exact_of_core (hcore : StmtCycCore) :
       exact arith_true (m + 1) s hn hs h4 (by omega)
   · exact cyc_upper n s (by omega)
 
-end PEqualNP.Outside.L_meta_314_aux.CycleSize
+end PEqualNP.Outside.L_meta_314.CycleSize
 
 -- Adapted from PEqualNP.MetaComplexity.Helpers.CycleCore in the Apache-2.0 project.
-namespace PEqualNP.Outside.L_meta_314_aux.CycleSize
+namespace PEqualNP.Outside.L_meta_314.CycleSize
 
-open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.Outside.L_meta_314_aux
-open PEqualNP.Outside.L_meta_314_aux.PathSize
+open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.Outside.L_meta_314
+open PEqualNP.Outside.L_meta_314.PathSize
 
  
 def Stmt107 : Prop :=
@@ -5068,14 +5072,18 @@ theorem cyc_exact_of_readers (h107 : Stmt107) :
       n + (n + 1) / 2 ≤ s + 1) :=
   cyc_exact_of_core (cyc_core_of_readers h107)
 
-end PEqualNP.Outside.L_meta_314_aux.CycleSize
+end PEqualNP.Outside.L_meta_314.CycleSize
 
 -- Adapted from PEqualNP.MetaComplexity.L106 in the Apache-2.0 project.
-theorem PEqualNP.Outside.L_meta_314_aux.cycleTheorem : ∀ n s : ℕ, 5 ≤ n → (PEqualNP.MetaComplexity.HasCircuitSize n (fun x : Fin n → Bool => decide (∃ i j : Fin n, (i.val + 1) % n = j.val ∧ x i = true ∧ x j = true)) s ↔ n + (n + 1) / 2 ≤ s + 1) :=
-  PEqualNP.Outside.L_meta_314_aux.CycleSize.cyc_exact_of_readers PEqualNP.Outside.L_meta_314_aux.readerTheorem
+namespace PEqualNP.Outside.L_meta_314
+
+theorem cycleTheorem : ∀ n s : ℕ, 5 ≤ n → (PEqualNP.MetaComplexity.HasCircuitSize n (fun x : Fin n → Bool => decide (∃ i j : Fin n, (i.val + 1) % n = j.val ∧ x i = true ∧ x j = true)) s ↔ n + (n + 1) / 2 ≤ s + 1) :=
+  PEqualNP.Outside.L_meta_314.CycleSize.cyc_exact_of_readers PEqualNP.Outside.L_meta_314.readerTheorem
+
+end PEqualNP.Outside.L_meta_314
 
 
-namespace PEqualNP.Outside.L_meta_314_aux
+namespace PEqualNP.Outside.L_meta_314
 
 open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity
 
@@ -5313,7 +5321,7 @@ lemma wire_class_of_minimal_cyc
   | star_or _ _ h => exact Or.inr (Or.inl h)
   | tying_pc _ _ h => exact Or.inr (Or.inr h)
 
-end PEqualNP.Outside.L_meta_314_aux
+end PEqualNP.Outside.L_meta_314
 
 -- ============================================================================
 -- STEP 5: Final theorem (single top-level theorem, full name)
@@ -5324,13 +5332,13 @@ theorem PEqualNP.Outside.L_meta_314 :
       circuitFun n C = (fun x => decide (∃ i j : Fin n, (i.val + 1) % n = j.val ∧ x i = true ∧ x j = true)) →
       (∀ g ∈ C.gates, g.op ≠ GateOp.not) ∧
       ∀ t : ℕ, t < C.size →
-        (PEqualNP.Outside.L_meta_314_aux.edgeOR n C t ∨
-         PEqualNP.Outside.L_meta_314_aux.starOR n C t ∨
-         PEqualNP.Outside.L_meta_314_aux.tying n C t) := by
+        (PEqualNP.Outside.L_meta_314.edgeOR n C t ∨
+         PEqualNP.Outside.L_meta_314.starOR n C t ∨
+         PEqualNP.Outside.L_meta_314.tying n C t) := by
   intro n C hn hmin hfun
   have hsize : C.size = n + (n + 1) / 2 - 1 :=
-    PEqualNP.Outside.L_meta_314_aux.minimal_cyc_size_eq n hn C hmin hfun
+    PEqualNP.Outside.L_meta_314.minimal_cyc_size_eq n hn C hmin hfun
   have hnots : ∀ g ∈ C.gates, g.op ≠ GateOp.not :=
-    PEqualNP.Outside.L_meta_314_aux.no_not_of_minimal_cyc n hn C hmin hsize hfun
+    PEqualNP.Outside.L_meta_314.no_not_of_minimal_cyc n hn C hmin hsize hfun
   refine ⟨hnots, ?_⟩
-  exact PEqualNP.Outside.L_meta_314_aux.wire_class_of_minimal_cyc n hn C hmin hsize hnots hfun
+  exact PEqualNP.Outside.L_meta_314.wire_class_of_minimal_cyc n hn C hmin hsize hnots hfun
