@@ -1,8 +1,8 @@
--- L-meta-314 Proof Campaign (Falseflagdave)
--- Toolkit adapted from lean/PEqualNP/Outside/L_meta_609.lean (brilliant-hq/pequalnp-proofs)
-
 import Mathlib
 import PEqualNP.Defs
+
+-- L-meta-314 Proof Campaign (Falseflagdave)
+-- Toolkit adapted from lean/PEqualNP/Outside/L_meta_609.lean (brilliant-hq/pequalnp-proofs)
 
 open PEqualNP.MetaComplexity
 
