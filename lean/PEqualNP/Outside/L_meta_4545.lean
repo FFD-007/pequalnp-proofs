@@ -1,0 +1,5 @@
+import Mathlib
+import PEqualNP.Defs
+
+theorem PEqualNP.Outside.L_meta_4545 : ∀ (x1 : ℕ) (x2 : SimpleGraph (Fin x1)) [x3 : DecidableRel x2.Adj] (x4 : PEqualNP.CircuitLowerBounds.Circuit) (x5 : Finset (Fin x1 × Fin x1)), PEqualNP.TopForm.NoFourCycle x2 → x2.edgeFinset.Nonempty → PEqualNP.TopForm.IsLeastAO x2 x4 → PEqualNP.TopForm.TopForm x2 x4 → (∀ (x10 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.TopForm.IsLeastAO x2 x10 → PEqualNP.TopForm.TopForm x2 x10 → (PEqualNP.TopForm.Ustar x2 x4).card ≤ (PEqualNP.TopForm.Ustar x2 x10).card) → (∃ (x11 : Fin x1 → Bool), ∀ (x12 x13 : Fin x1), x2.Adj x12 x13 → x11 x12 ≠ x11 x13) → (∀ (x12 : Fin x1), (x2.neighborSet x12).ncard ≠ (1 : ℕ)) → (∀ x13 ∈ x5, x2.Adj x13.1 x13.2) → (∀ x14 ∈ x5, ∀ x16 ∈ x5, x14.1 = x16.1 → x14 = x16) → (∀ x15 ∈ x5, ∀ x17 ∈ x5, x15.2 = x17.2 → x15 = x17) → (∀ x16 ∈ x5, ∀ x18 ∈ x5, x16.1 ≠ x18.2) → (PEqualNP.TopForm.Ustar x2 x4).card + x5.card ≤ (PEqualNP.TopForm.tops x2 x4 \ PEqualNP.TopForm.centreless x2 x4).card + (2 : ℕ) * (PEqualNP.TopForm.centreless x2 x4).card + (PEqualNP.TopForm.junk x2 x4).card + (PEqualNP.TopForm.orN x2 x4 \ PEqualNP.TopForm.lam x2 x4).card := by
+  sorry
